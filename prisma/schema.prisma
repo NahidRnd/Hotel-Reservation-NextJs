@@ -1,0 +1,135 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Hotel {
+  id          String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String
+  description String
+  coverImage  String
+  gallery     String[]
+  rating      Float
+  city        City @relation(fields: [cityId], references: [id], map: "session_cityId_city_id_fk")
+  cityId      String @db.Uuid
+  amenities   Service[]
+  rooms       Room[]
+  reviews     Review[]
+  createdAt   DateTime @default(now())
+}
+
+model Room {
+  id          String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String
+  type        String
+  price       Decimal @db.Decimal(10, 2)
+  capacity    Int
+  images      String[]
+  hotel       Hotel @relation(fields: [hotelId], references: [id], map: "session_hotelId_hotel_id_fk")
+  hotelId     String @db.Uuid
+  bookings    Booking[]
+  createdAt   DateTime @default(now())
+}
+
+model Booking {
+  id            String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  sessionBookId String
+  room          Room @relation(fields: [roomId], references: [id], map: "session_roomId_room_id_fk")
+  roomId        String @db.Uuid
+  user          User @relation(fields: [userId], references: [id], map: "session_userId_user_id_fk")
+  userId        String @db.Uuid
+  startDate     DateTime
+  endDate       DateTime
+  guests        Int
+  status        String // pending | confirmed | canceled
+  createdAt     DateTime @default(now())
+}
+
+model User {
+  id          String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String
+  email       String @unique
+  password    String
+  image       String?
+  phone       String?
+  role        String @default("user") // user | admin
+  bookings    Booking[]
+  reviews     Review[]
+  createdAt   DateTime @default(now())
+  account     Account[]
+  session     Session[]
+}
+
+model Service {
+  id          String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String
+  icon        String
+  hotels      Hotel[]
+}
+
+model City {
+  id          String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String
+  images      String[] @default(["t_amsterdam.jfif"])
+  description String @default("Amsterdam is the Netherlands’ capital, known for its artistic heritage, elaborate canal system and narrow houses with gabled facades, legacies of the ")
+  hotels      Hotel[]
+}
+
+model Review {
+  id          String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  rating      Int
+  comment     String
+  user        User @relation(fields: [userId], references: [id], map: "session_userId_user_id_fk")
+  userId      String @db.Uuid
+  hotel       Hotel @relation(fields: [hotelId], references: [id], map: "session_hotelId_hotel_id_fk")
+  hotelId     String @db.Uuid
+  createdAt   DateTime @default(now())
+}
+
+model Account {
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  createdAt         DateTime @default(now()) @db.Timestamp(6)
+  updatedAt         DateTime @updatedAt
+  userId            String   @db.Uuid
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "account_userId_user_id_fk")
+
+  @@id([provider, providerAccountId], map: "account_provider_providerAccountId_pk")
+}
+
+model Session {
+  sessionToken String   @id
+  expires      DateTime @db.Timestamp(6)
+  createdAt    DateTime @default(now()) @db.Timestamp(6)
+  updatedAt    DateTime @updatedAt
+  userId       String   @db.Uuid
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "session_userId_user_id_fk")
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@id([identifier, token])
+}
