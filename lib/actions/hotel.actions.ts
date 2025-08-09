@@ -1,7 +1,7 @@
 'use server';
 
 import { prisma } from "@/db/prisma";
-import { Prisma } from "../generated/prisma";
+import { Prisma } from "@prisma/client";
 
 // Get All hotels with filter
 export async function getHotels({
