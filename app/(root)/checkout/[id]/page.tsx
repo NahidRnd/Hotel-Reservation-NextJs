@@ -10,10 +10,10 @@ const CheckoutPage = async (props: {params: Promise<{id: string}>;}) => {
     const {id:roomId} = await props.params;
     const room = await getRoomById(roomId);
     if(!room) return null;
-    const safeRoom = {
-        ...room,
-        price: Number(room.price), 
-    };
+    // const safeRoom = {
+    //     ...room,
+    //     price: Number(room.price), 
+    // };
     const user = await getUserInfo();
 
     return ( 
@@ -35,8 +35,8 @@ const CheckoutPage = async (props: {params: Promise<{id: string}>;}) => {
             </div>
             <CheckoutSteps current={2} />
             <div className="container flex flex-col pt-8! gap-[30px]">
-                {room &&<CheckoutBookingDetails room={safeRoom} user={user} />}
-                <CheckoutBookingButton room={safeRoom} />
+                {room &&<CheckoutBookingDetails room={room} user={user} />}
+                <CheckoutBookingButton room={room} />
             </div>
         </div>
      );

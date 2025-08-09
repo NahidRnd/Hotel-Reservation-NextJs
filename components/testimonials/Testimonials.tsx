@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 
@@ -19,7 +20,7 @@ const Testimonials = () => {
                         </p>
                     </div>
                     <div className="author">
-                        <img src='user8.jpg' alt="Testimonial" />
+                        <Image src='user8.jpg' alt="Testimonial" />
                         <div className="author-info">
                             <h5 className="text-[18px] font-semibold">Beth Cardon</h5>
                             <span>Rome, Italy</span>
@@ -37,11 +38,11 @@ const Testimonials = () => {
                             <CiStar />
                         </div>
                         <p>
-                        Extremely nice environment, the room was great, the service was awesome, really helpful and great service I'll visit them again in the near future.
+                        Extremely nice environment, the room was great, the service was awesome, really helpful and great service I&aposll visit them again in the near future.
                         </p>
                     </div>
                     <div className="author">
-                        <img src='user2.jpg' alt="Testimonial" />
+                        <Image src='user2.jpg' alt="Testimonial" />
                         <div className="author-info">
                             <h5 className="text-[18px] font-semibold">Beth Cardon</h5>
                             <span>Rome, Italy</span>
@@ -63,7 +64,7 @@ const Testimonials = () => {
                         </p>
                     </div>
                     <div className="author">
-                        <img src='/user1-1.jpg' alt="Testimonial" />
+                        <Image src='/user1-1.jpg' alt="Testimonial" />
                         <div className="author-info">
                             <h5 className="text-[18px] font-semibold">Beth Cardon</h5>
                             <span>Rome, Italy</span>

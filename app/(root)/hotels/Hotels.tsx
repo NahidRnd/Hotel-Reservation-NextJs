@@ -4,8 +4,10 @@ import Link from "next/link";
 import Icon from '@mui/material/Icon';
 import { useRef, useState } from "react";
 import useOutsideClick from "@/hooks/useOutsideClick";
+import Image from "next/image";
+import { HotelFull, Services } from "@/types";
 
-const Hotels = ({hotels, serviceList}: any) => {
+const Hotels = ({hotels, serviceList}: {hotels: HotelFull[]; serviceList: Services[]}) => {
 
         const [openSort, setOpenSort] = useState(false);
         const sortRef = useRef(null);
@@ -37,7 +39,7 @@ const Hotels = ({hotels, serviceList}: any) => {
                 scrollLeft: 0,
                 scrollTop: 0
             });
-            const [isScrolling, setIsScrolling] = useState(false);
+            // const [isScrolling, setIsScrolling] = useState(false);
             const handleDragStart = (e: React.MouseEvent) => {
                 if (!ourRef.current) return
               // const slider = ourRef.current.children[0];
@@ -105,11 +107,10 @@ const Hotels = ({hotels, serviceList}: any) => {
                   </div>
                   <div className={`rooms space-y-8 ${ !listView ? "grid-view" : ""}`}>
                   {
-                // @ts-ignore
                 hotels.map( item  => {
                   return <div key={item.id} className={`${listView ? "flex border h-48" : "block h-[620px] border"}`}>
                       <div className={`${ listView ? "w-[35%] h-48" : "w-full h-64"}`}>
-                        <img src={item.coverImage} alt={item.name} className="h-full w-full object-cover" />
+                        <Image src={item.coverImage} alt={item.name} className="h-full w-full object-cover" />
                       </div>
                       <div className={`${ listView ? "w-[45%] px-5 overflow-hidden py-3": "w-full text-center p-5 min-h-52"}`}>
                       <Link key={item.id} href={`/hotels/${item.id}`}>
@@ -121,9 +122,9 @@ const Hotels = ({hotels, serviceList}: any) => {
                       <div className="z-10 mt-5 relative">
                       <Draggable className={"drag"}>
                        <div className="drag-scroll" ref={journalRef}>
-                        {// @ts-ignore
+                        {
                         item.amenities?.map((ser,i)=>
-                          {  // @ts-ignore
+                          { 
                             const service = serviceList.find((el)=> {
                               return el.name === ser.name
                             })

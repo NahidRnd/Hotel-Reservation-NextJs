@@ -1,6 +1,5 @@
 import { OptionsSelect } from "@/context/BookContext";
 import { getAllServices, getHotels } from "@/lib/actions/hotel.actions";
-import { Icon } from "@mui/material";
 import Link from "next/link";
 import { Range } from "react-date-range";
 import Hotels from "./Hotels";

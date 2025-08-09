@@ -4,11 +4,12 @@ import Book from "@/components/book/Book";
 import RestoreBooking from "@/components/book/restore-booking";
 import { useBook } from "@/context/BookContext";
 import { useFilter } from "@/context/FilterContext";
+import { Services } from "@/types";
 import { useRouter, useSearchParams } from "next/navigation";
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css'; 
 
-const HotelsFilter = ({services}: any) => {
+const HotelsFilter = ({services}: {services: Services[]}) => {
     const {price, setPrice, amenities, setAmenities} = useFilter();
 
     const { destination, date, options } = useBook();
@@ -62,7 +63,6 @@ const HotelsFilter = ({services}: any) => {
                 </div>
                 <div className="max-h-56 overflow-y-auto">
                   {
-                    // @ts-ignore
                     services.map((item, index) => {
                       return <div className="mb-1" key={index}>
                         <input type="checkbox" className="mr-2" key={index} name={item.name} id={item.id} onChange={(e) => handleService({id:e.target.id,name:e.target.name})} /> 

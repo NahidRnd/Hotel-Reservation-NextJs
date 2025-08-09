@@ -10,7 +10,7 @@ const UserButton = async ({style, text}: {style: string, text: string} ) => {
             <Link href='/signin' className={style}><FaUser /> {text}</Link>
         )
     }
-    const firstInitial = session.user?.name?.charAt(0).toUpperCase() ?? 'U';
+    // const firstInitial = session.user?.name?.charAt(0).toUpperCase() ?? 'U';
 
     return ( 
         <div className='flex gap-2 items-center'>

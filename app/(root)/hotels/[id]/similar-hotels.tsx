@@ -1,4 +1,5 @@
 import { getSimilarHotels } from "@/lib/actions/hotel.actions";
+import Image from "next/image";
 import Link from "next/link";
 
 const SimilarHotels = async ({id, city}: {id: string; city: string;}) => {
@@ -14,7 +15,7 @@ const SimilarHotels = async ({id, city}: {id: string; city: string;}) => {
                     return (
                       <div className="group relative rounded-sm overflow-hidden" key={item.id}>
                         <Link key={item.id} href={`/hotels/${item.id}`}>
-                          <img src={`../${item.coverImage}`} alt={item.name} className="w-full h-[400px] rounded-[4px] transition-transform duration-[1000ms] ease-[cubic-bezier(0,1,.5,1)] hover:scale-[1.1]" />
+                          <Image src={`../${item.coverImage}`} alt={item.name} className="w-full h-[400px] rounded-[4px] transition-transform duration-[1000ms] ease-[cubic-bezier(0,1,.5,1)] hover:scale-[1.1]" />
                         </Link>
                         <p className="absolute top-[10px] right-[10px] bg-[rgba(0,0,0,0.2)] text-white px-[10px] py-[2px] rounded-[2px] leading-[24px] text-[14px] transition-colors duration-300 group-hover:bg-[rgba(0,0,0,0.3)]">
                               {/* € {item.price} /  */} 500 /

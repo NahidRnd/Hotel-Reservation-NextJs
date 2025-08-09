@@ -2,7 +2,7 @@
 import { LiaPaypal } from "react-icons/lia";
 import { RiBankFill } from "react-icons/ri";
 import { FaMoneyBillAlt, FaRegCalendarAlt } from "react-icons/fa";
-import { Room, User } from "@/types";
+import { Room } from "@/types";
 import { addItemToBook } from "@/lib/actions/book.actions";
 import { useBook } from "@/context/BookContext";
 import toast from "react-hot-toast";
@@ -13,7 +13,8 @@ const CheckoutBookingButton = ({room}: {room: Room}) => {
     const startDate = date?.[0]?.startDate ? date[0].startDate : "N/A";
     const endDate = date?.[0]?.endDate ? date[0].endDate : "N/A";
     const nights = Math.ceil((new Date(endDate).getTime() - new Date(startDate).getTime()) / (1000 * 60 * 60 * 24));
-    const totalPrice = room.price * nights;
+    const totalPrice = Number(room.price) * nights;
+    console.log(totalPrice);
     
     const router = useRouter();
 

@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useBook } from "@/context/BookContext";
+import { DateRange } from "@/types";
 
 const RestoreBooking = () => {
   const { setDate, setOptions, setDestination, setIsReady } = useBook();
@@ -24,7 +25,7 @@ const RestoreBooking = () => {
 
     if (storedDate) {
         const parsedDate = JSON.parse(storedDate);
-        const restoredDate = parsedDate.map((range: any) => ({
+        const restoredDate = parsedDate.map((range: DateRange) => ({
         ...range,
         startDate: new Date(range.startDate),
         endDate: new Date(range.endDate)
@@ -35,7 +36,7 @@ const RestoreBooking = () => {
     if (storedOptions) setOptions(JSON.parse(storedOptions));
     if (storedDestination) setDestination(storedDestination);
     setIsReady(true);
-    }, []);
+    }, [setDate, setDestination, setIsReady, setOptions]);
 
   return null;
 };

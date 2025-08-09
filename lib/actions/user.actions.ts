@@ -6,7 +6,7 @@ import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { hashSync } from "bcrypt-ts-edge";
 import { prisma } from "@/db/prisma";
 import { formatError } from "../utils";
-import { Book, UserForm } from "@/types";
+import { UserForm } from "@/types";
 
 
 // Sign in the user with credentials

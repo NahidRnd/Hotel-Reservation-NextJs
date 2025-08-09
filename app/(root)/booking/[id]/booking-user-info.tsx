@@ -2,7 +2,7 @@
 
 import { User } from "@/types";
 import { FaPencilAlt } from "react-icons/fa";
-import { ControllerRenderProps, SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import z from "zod";
 import { userUpdateSchema } from "@/lib/validators";
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -20,6 +20,8 @@ const BookingUserInfo = ({user} : {user: User}) => {
     });
 
     const [isPending, startTransition] = useTransition();
+    console.log(isPending);
+    
 
     const onSubmit: SubmitHandler<z.infer<typeof userUpdateSchema>> = async (
         values

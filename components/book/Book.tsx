@@ -39,6 +39,8 @@ const Book = ({page}:{page?: string}) => {
 
     const router = useRouter();
     const searchParams = useSearchParams();
+    console.log(searchParams);
+    
     const handleSearch = () => {
         const encodedParams = new URLSearchParams({
             date: JSON.stringify(date),

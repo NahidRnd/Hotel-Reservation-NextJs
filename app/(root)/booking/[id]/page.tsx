@@ -1,17 +1,17 @@
 import CheckoutSteps from "@/components/checkout-steps";
-import { useBook } from "@/context/BookContext";
-import { getMyBook } from "@/lib/actions/book.actions";
+// import { getMyBook } from "@/lib/actions/book.actions";
 import { getRoomById } from "@/lib/actions/hotel.actions";
 import Link from "next/link";
 import BookingDetails from "./booking-details";
 import { getUserInfo } from "@/lib/actions/user.actions";
 import BookingUserInfo from "./booking-user-info";
+import Image from "next/image";
 
 const BookingPage = async (props: {params: Promise<{id: string}>;}) => {
 
     const {id:roomId} = await props.params;
     const room = await getRoomById(roomId);
-    const booking = await getMyBook();
+    // const booking = await getMyBook();
     const user = await getUserInfo();
     
     return ( 
@@ -37,7 +37,7 @@ const BookingPage = async (props: {params: Promise<{id: string}>;}) => {
                   <div className={`rooms space-y-8`}>
                    <div className="flex border h-48">
                       <div className="w-[35%] h-48">
-                        <img src={room?.images[0]} alt={room?.name} className="h-full w-full object-cover" />
+                        <Image src={room?.images[0] || 'noimage.png'} alt={room?.name || 'room image'} className="h-full w-full object-cover" />
                       </div>
                       <div className="w-[45%] px-5 overflow-hidden py-3">
                         <Link href={`/hotels/`}>

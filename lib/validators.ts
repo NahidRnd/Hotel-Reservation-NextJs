@@ -1,4 +1,4 @@
-import { string, z } from "zod";
+import { z } from "zod";
 
 // Booking
 export const bookItemSchema = z.object({

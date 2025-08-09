@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaPinterest, FaTwitter } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
@@ -9,7 +10,7 @@ const Footer = () => {
             <div>
               <div className="container flex justify-between gap-8 mr-[45px]">
                 <div className="pr-[45px] footer-flex">
-                    <img src='/logo.png' alt="logo" className="w-[180px]" />
+                    <Image src='/logo.png' alt="logo" className="w-[180px]" />
                     <p className="text-[15px]">
                     At Travel Nest, we simplify your travel planning by offering seamless hotel reservations. We provide a wide array of options tailored to your preferences, ensuring an unforgettable stay.
                     </p>

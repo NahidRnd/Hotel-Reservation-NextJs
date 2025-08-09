@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import Link from "next/link";
 
 const BookingDetails = ({price, roomId}: { price: number; roomId: string; }) => {
-        const { date, options } = useBook();
+        const { date } = useBook();
         const startDate = date?.[0]?.startDate ? date[0].startDate : "N/A";
         const endDate = date?.[0]?.endDate ? date[0].endDate : "N/A";
         const nights = Math.ceil((new Date(endDate).getTime() - new Date(startDate).getTime()) / (1000 * 60 * 60 * 24));

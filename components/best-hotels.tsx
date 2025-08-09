@@ -1,14 +1,15 @@
+import { HotelCity } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
-const BestHotels = ({data}: {data: any}) => {
+const BestHotels = ({data}: {data: HotelCity[]}) => {
     return ( 
         <>
         {data.length > 0 ? (
             <div className="container bg-gradient-to-b from-[#F5F3F0] to-[#F5F3F1] py-[70px]">
                 <h2 className="title pb-8">Our Best Hotels</h2>
                 <div className="flex gap-8 w-full">
-                  {data.map((item: any) => {
+                  {data.map((item: HotelCity) => {
                     return (
                       <div className="group relative rounded-sm overflow-hidden" key={item.id}>
                         <Link key={item.id} href={`hotels/${item.id}`}>

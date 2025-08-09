@@ -2,17 +2,19 @@
 import Link from "next/link";
 import { FaUser } from "react-icons/fa";
 import { BedOutlined, Coffee } from "@mui/icons-material";
+import Image from "next/image";
+import { HotelRoom, Services } from "@/types";
 
-const Rooms = ({data, serviceList}: any) => {
+const Rooms = ({data, serviceList}: {data: HotelRoom; serviceList: Services[]}) => {
+        console.log(serviceList);
         
     return (
         <div className="container pt-[100px] space-y-8">
           {
-          // @ts-ignore
           data?.rooms.map( item => {
             return <div key={item.id} className="flex border h-[250px]">
                 <div className="w-[35%]">
-                  <img src={item.images[0]} alt={item.name} className="h-[250px] w-full object-cover" />
+                  <Image src={item.images[0]} alt={item.name} className="h-[250px] w-full object-cover" />
                 </div>
                 <div className="w-[45%] pt-5 pl-5 overflow-hidden py-3">
                   <h2 className="text-ash text-[20px] leading-8 ">{item.name}</h2>
