@@ -48,7 +48,7 @@ const ContactPage = () => {
                     </div>
                 </div>
                 <div>
-                    <ContactMap />
+                    {typeof window != "undefined" && <ContactMap />}
                 </div>
             </div>
         </div>
