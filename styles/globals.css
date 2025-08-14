@@ -6,6 +6,7 @@
   --color-cream: #f5f3f0;
   --color-ash: #606060;
   --color-border: #ebebeb;
+  --color-text: #858a99;
 }
 
 @layer base {
@@ -13,7 +14,7 @@
     @apply border-border;
   }
   body{
-    @apply text-[#858a99] text-[15px] leading-[1.8em];
+    @apply text-text text-[15px] leading-[1.8em];
   }
   button{
     @apply cursor-pointer;
@@ -46,7 +47,6 @@
     @apply overflow-hidden h-[343px] relative;
   }
   .dest-img-item img{
-    width: 100%;
     border-radius: 2px;
     -ms-transition: transform 1s cubic-bezier(0, 1, .5, 1);
     -webkit-transition: transform 1s cubic-bezier(0,1,.5,1);

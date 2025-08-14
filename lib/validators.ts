@@ -44,3 +44,11 @@ export const userUpdateSchema = z.object({
     name: z.string().min(3, 'Name must be at least 3 characters'),
     phone: z.string().min(9, 'phone number must be at least 9 characters').max(11, 'Phone number must be at most 11'),
 });
+
+export const insertContactSchema = z.object({
+    name: z.string().min(3, 'Name must be at least 3 characters'),
+    subject: z.string().min(3, 'Subject must be at least 3 characters'),
+    email: z.string().min(3, 'Email must be at least 3 characters'),
+    phone: z.string().min(9, 'phone number must be at least 9 characters').max(11, 'Phone number must be at most 11'),
+    message: z.string().min(3, 'Message must be at least 3 characters'),
+});

@@ -37,7 +37,7 @@ const BookingPage = async (props: {params: Promise<{id: string}>;}) => {
                   <div className={`rooms space-y-8`}>
                    <div className="flex border h-48">
                       <div className="w-[35%] h-48">
-                        <Image src={room?.images[0] || 'noimage.png'} alt={room?.name || 'room image'} className="h-full w-full object-cover" />
+                        <Image src={room?.images[0] || 'noimage.png'} alt={room?.name || 'room image'} className="h-full w-full object-cover" width={400} height={400} />
                       </div>
                       <div className="w-[45%] px-5 overflow-hidden py-3">
                         <Link href={`/hotels/`}>

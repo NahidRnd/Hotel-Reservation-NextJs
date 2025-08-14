@@ -110,7 +110,7 @@ const Hotels = ({hotels, serviceList}: {hotels: HotelFull[]; serviceList: Servic
                 hotels.map( item  => {
                   return <div key={item.id} className={`${listView ? "flex border h-48" : "block h-[620px] border"}`}>
                       <div className={`${ listView ? "w-[35%] h-48" : "w-full h-64"}`}>
-                        <Image src={item.coverImage} alt={item.name} className="h-full w-full object-cover" />
+                        <Image src={item.coverImage} alt={item.name} width={400} height={400} className="h-full w-full object-cover" />
                       </div>
                       <div className={`${ listView ? "w-[45%] px-5 overflow-hidden py-3": "w-full text-center p-5 min-h-52"}`}>
                       <Link key={item.id} href={`/hotels/${item.id}`}>

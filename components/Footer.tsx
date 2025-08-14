@@ -7,10 +7,10 @@ import { TfiYoutube } from "react-icons/tfi";
 
 const Footer = () => {
     return (
-            <div>
-              <div className="container flex justify-between gap-8 mr-[45px]">
+            <div className="border-t">
+              <div className="container pt-12! flex justify-between gap-8 mr-[45px]">
                 <div className="pr-[45px] footer-flex">
-                    <Image src='/logo.png' alt="logo" className="w-[180px]" />
+                    <Image src='/logo.png' alt="logo" className="w-[180px]" width={180} height={40} />
                     <p className="text-[15px]">
                     At Travel Nest, we simplify your travel planning by offering seamless hotel reservations. We provide a wide array of options tailored to your preferences, ensuring an unforgettable stay.
                     </p>

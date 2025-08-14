@@ -13,12 +13,13 @@ const Navbar = () => {
             <Image src={`${pathname === '/' ? '/logo-white.png' : '/logo.png'}`} alt="luxe haven" width={180} height={40} />
             <ul className="flex gap-6 font-bold">
                 <li><Link href="/" className={`${(pathname === '/')?'text-primary' : ''} hover:text-primary py-2`}>Home</Link></li>
-                <li><Link href="">About Us</Link></li>
+                <li><Link href="/about">About Us</Link></li>
                 <li><Link href="/hotels">Hotels</Link></li>
                 <li><Link href="">Top Destinations</Link></li>
+                <li><Link href="/contact-us">Contact Us</Link></li>
                 <li><Link href="">News</Link></li>
             </ul>
-            <button className="btn">Book Online</button>
+            <Link href='/hotels' className="btn">Book Online</Link>
             {/* <User /> */}
         </nav>
     );

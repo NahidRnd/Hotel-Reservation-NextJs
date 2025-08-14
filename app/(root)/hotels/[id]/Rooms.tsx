@@ -14,7 +14,7 @@ const Rooms = ({data, serviceList}: {data: HotelRoom; serviceList: Services[]}) 
           data?.rooms.map( item => {
             return <div key={item.id} className="flex border h-[250px]">
                 <div className="w-[35%]">
-                  <Image src={item.images[0]} alt={item.name} className="h-[250px] w-full object-cover" />
+                  <Image src={item.images[0]} alt={item.name} className="h-[250px] w-full object-cover" width={400} height={400} />
                 </div>
                 <div className="w-[45%] pt-5 pl-5 overflow-hidden py-3">
                   <h2 className="text-ash text-[20px] leading-8 ">{item.name}</h2>

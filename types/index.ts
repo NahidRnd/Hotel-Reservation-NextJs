@@ -1,4 +1,4 @@
-import { bookItemSchema, insertBookSchema, userInfoSchema, userUpdateSchema } from "@/lib/validators";
+import { bookItemSchema, insertBookSchema, insertContactSchema, userInfoSchema, userUpdateSchema } from "@/lib/validators";
 import { Decimal } from "@prisma/client/runtime/library";
 import z from "zod";
 
@@ -13,6 +13,7 @@ export type User = z.infer<typeof userInfoSchema> & {
 };
 export type Book = z.infer<typeof insertBookSchema>;
 export type UserForm = z.infer<typeof userUpdateSchema>;
+export type ContactForm = z.infer<typeof insertContactSchema>;
 export type Hotel = {
     id: string;
     name: string;

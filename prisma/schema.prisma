@@ -133,3 +133,13 @@ model VerificationToken {
 
   @@id([identifier, token])
 }
+
+model ContactMesseages {
+  id          String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String
+  email       String
+  phone       String
+  subject     String
+  message     String
+  createdAt   DateTime @default(now())
+}

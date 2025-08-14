@@ -20,7 +20,7 @@ const Testimonials = () => {
                         </p>
                     </div>
                     <div className="author">
-                        <Image src='user8.jpg' alt="Testimonial" />
+                        <Image src='/user8.jpg' alt="Testimonial" width={80} height={80} />
                         <div className="author-info">
                             <h5 className="text-[18px] font-semibold">Beth Cardon</h5>
                             <span>Rome, Italy</span>
@@ -42,7 +42,7 @@ const Testimonials = () => {
                         </p>
                     </div>
                     <div className="author">
-                        <Image src='user2.jpg' alt="Testimonial" />
+                        <Image src='/user2.jpg' alt="Testimonial" width={80} height={80} />
                         <div className="author-info">
                             <h5 className="text-[18px] font-semibold">Beth Cardon</h5>
                             <span>Rome, Italy</span>
@@ -64,7 +64,7 @@ const Testimonials = () => {
                         </p>
                     </div>
                     <div className="author">
-                        <Image src='/user1-1.jpg' alt="Testimonial" />
+                        <Image src='/user1-1.jpg' alt="Testimonial" width={80} height={80} />
                         <div className="author-info">
                             <h5 className="text-[18px] font-semibold">Beth Cardon</h5>
                             <span>Rome, Italy</span>

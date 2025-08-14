@@ -42,13 +42,13 @@ const HotelRoomsPage = async (props: {params: Promise<{id: string}>;}) => {
                 <div className="w-[70%]">
                   <div className="">
                     <div className="">
-                      <Image className="w-full" src='/1.jpg' alt="hotel image" />              
+                      <Image className="w-full" src='/1.jpg' alt="hotel image" width={400} height={400} />              
                     </div>
                     <div className="flex w-[24%] gap-[5.5%] pt-[15px]">
-                      <Image src='/5.jpg' alt="hotel image" />
-                      <Image src='/2.jpg' alt="hotel image" />
-                      <Image src='/3.jpg' alt="hotel image" />
-                      <Image src='/4.jpg' alt="hotel image" />
+                      <Image src='/5.jpg' width={400} height={400} alt="hotel image" />
+                      <Image src='/2.jpg' width={400} height={400} alt="hotel image" />
+                      <Image src='/3.jpg' width={400} height={400} alt="hotel image" />
+                      <Image src='/4.jpg' width={400} height={400} alt="hotel image" />
                     </div>
                   </div>
                   <div className="pt-[25px]">
@@ -93,7 +93,7 @@ const HotelRoomsPage = async (props: {params: Promise<{id: string}>;}) => {
                     </div>
                     <div className="p-[15px]">
                       <div className="flex gap-[10px] items-center py-[10px] leading-5">
-                        <Image className="w-10 rounded-[20px]" src='/user1-1.jpg' alt="review" />
+                        <Image className="w-10 rounded-[20px]" src='/user1-1.jpg' alt="review" width={400} height={400} />
                         <span className="text-ash font-semibold">
                         Aybars furkan
                         <p className="text-[#858a99] text-[12px]">jun 24</p>
@@ -105,7 +105,7 @@ const HotelRoomsPage = async (props: {params: Promise<{id: string}>;}) => {
                     </div>
                     <div className="p-[15px]">
                       <div className="flex gap-[10px] items-center py-[10px] leading-5">
-                        <Image className="w-10 rounded-[20px]" src='/user2.jpg' alt="review" />
+                        <Image className="w-10 rounded-[20px]" src='/user2.jpg' alt="review" width={400} height={400} />
                         <span className="text-ash font-semibold">
                         Ersen Emir
                         <p className="text-[#858a99] text-[12px]">jul 2022</p>
@@ -117,7 +117,7 @@ const HotelRoomsPage = async (props: {params: Promise<{id: string}>;}) => {
                     </div>
                     <div className="p-[15px]">
                       <div className="flex gap-[10px] items-center py-[10px] leading-5">
-                        <Image className="w-10 rounded-[20px]" src='/user8.jpg' alt="review" />
+                        <Image className="w-10 rounded-[20px]" src='/user8.jpg' alt="review" width={400} height={400} />
                         <span className="text-ash font-semibold">
                         Abdülbaki
                         <p className="text-[#858a99] text-[12px]">feb 2024</p>
