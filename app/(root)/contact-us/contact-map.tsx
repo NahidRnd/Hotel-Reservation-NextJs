@@ -25,7 +25,7 @@ const ContactMap = () => {
                 attribution="&copy; OpenStreetMap contributors"
             />
             <Marker position={position} icon={customIcon}>
-                <Popup>We're here in Kassel!</Popup>
+                <Popup>We&apos;re here in Kassel!</Popup>
             </Marker>
         </MapContainer>
      );

@@ -1,4 +1,3 @@
-import BestHotels from "@/components/best-hotels";
 import { getBestPriceHotelRoom } from "@/lib/actions/hotel.actions";
 import { HotelCity } from "@/types";
 import Image from "next/image";
@@ -30,7 +29,7 @@ const AboutPage = async () => {
                         <p>Welcome to Luxury Haven, where elegance meets intention, and every detail tells a story.</p>
                         <p>We began with a vision: to redefine luxury as something deeply personal, purposeful, and timeless. From curated experiences to bespoke products, our mission is to inspire a life of beauty, balance, and bold self-expression.</p>
                         <p className="pt-3">What sets us apart? We believe true luxury is rooted in authenticity, sustainability, and soulful design. Every item we offer and every experience we craft is infused with care, creativity, and a commitment to excellence.</p>
-                        <p className="pt-3">Our team is a collective of designers, storytellers, and visionaries — each bringing their unique perspective to create moments that matter. Whether you're seeking serenity, sophistication, or a spark of inspiration, Luxury Haven is your sanctuary.</p>
+                        <p className="pt-3">Our team is a collective of designers, storytellers, and visionaries — each bringing their unique perspective to create moments that matter. Whether you&apos;re seeking serenity, sophistication, or a spark of inspiration, Luxury Haven is your sanctuary.</p>
                         <p>Thank you for joining us on this journey. We&apos;re here to elevate the everyday, celebrate individuality, and build a community that values quality over quantity.</p>
                         <p className="pt-3 font-semibold">Welcome to your haven. Let&apos;s create something extraordinary.</p>
                     </div>
@@ -60,7 +59,7 @@ const AboutPage = async () => {
                         </div>
                     </div>
                     <p>
-                        Discover a sanctuary of comfort and elegance where every detail is crafted to enhance your stay. With 50 beautifully appointed rooms, two gourmet restaurants, and a team of 18 dedicated staff members, our hotel offers a seamless blend of luxury and hospitality. Whether you're unwinding in one of our three swimming pools, hosting a meeting in our fully equipped conference rooms, or indulging in rejuvenation at our spa and wellness center — complete with five massage rooms — you'll find everything you need to relax, recharge, and reconnect. Families are welcome too, with a safe playground designed for our youngest guests. At every turn, we&apos;re here to make your experience unforgettable.
+                        Discover a sanctuary of comfort and elegance where every detail is crafted to enhance your stay. With 50 beautifully appointed rooms, two gourmet restaurants, and a team of 18 dedicated staff members, our hotel offers a seamless blend of luxury and hospitality. Whether you&apos;re unwinding in one of our three swimming pools, hosting a meeting in our fully equipped conference rooms, or indulging in rejuvenation at our spa and wellness center — complete with five massage rooms — you&apos;ll find everything you need to relax, recharge, and reconnect. Families are welcome too, with a safe playground designed for our youngest guests. At every turn, we&apos;re here to make your experience unforgettable.
                     </p>
                 </div>
                 <div>
@@ -103,8 +102,8 @@ const AboutPage = async () => {
                 <div className="flex gap-6">
                 {data.map((item: HotelCity) => {
                     return(
-                        <div className="bg-white border rounded-sm relative overflow-hidden">    
-                            <Link key={item.id} href={`hotels/${item.id}`}>
+                        <div key={item.id} className="bg-white border rounded-sm relative overflow-hidden">    
+                            <Link href={`hotels/${item.id}`}>
                                 <div className="overflow-hidden w-[385px]">
                                     <Image src={item.coverImage} alt={item.name} width={420} height={200} className="rounded-t h-[400px] transition-transform duration-1000 ease-[cubic-bezier(0,1,.5,1)] hover:translate-x-4 scale-120" />
                                 </div>
