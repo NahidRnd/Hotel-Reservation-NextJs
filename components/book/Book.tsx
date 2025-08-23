@@ -58,7 +58,7 @@ const Book = ({page}:{page?: string}) => {
     if (!isHomePage &&!isReady) { return <div>Loading Reserve ...</div>; }
 
     return ( 
-        <div className={`${isHomePage ? "flex p-[30px]" : "inline-block p-4 w-full border *:w-full **:w-full"} ${page === 'filter' ? "border-0 p-0!" : ""} justify-center gap-[10px] rounded-sm bg-white`}>
+        <div className={`${isHomePage ? "flex p-[30px]" : "inline-block p-4 w-full border *:w-full **:w-full"} ${page === 'filter' ? "border-0 p-0!" : ""} justify-center gap-[10px] rounded-sm bg-white ${page === 'responsive' ? 'inline-block p-4 w-full border *:w-full **:w-full space-y-4': ''}`}>
             <div className="single-book">
                 {`${!isHomePage ? "Book Your Hotel" : ""}`}
             </div>

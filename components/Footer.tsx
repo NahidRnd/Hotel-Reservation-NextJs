@@ -8,7 +8,7 @@ import { TfiYoutube } from "react-icons/tfi";
 const Footer = () => {
     return (
             <div className="border-t">
-              <div className="container pt-12! flex justify-between gap-8 mr-[45px]">
+              <div className="container pt-12! flex flex-col md:flex-row justify-between gap-8 mr-[45px]">
                 <div className="pr-[45px] footer-flex">
                     <Image src='/logo.png' alt="logo" className="w-[180px]" width={180} height={40} />
                     <p className="text-[15px]">

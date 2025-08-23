@@ -36,7 +36,7 @@ const ContactForm = () => {
     }
 
     return ( 
-        <form method="post" onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-2 gap-6 *:bg-[#fcfcfc] *:placeholder:text-[#b3b3b3]">
+        <form method="post" onSubmit={form.handleSubmit(onSubmit)} className="md:grid md:grid-cols-2 flex flex-col gap-6 *:bg-[#fcfcfc] *:placeholder:text-[#b3b3b3]">
             <input id="name" {...form.register("name")} type="text" placeholder="Enter Your Name...." required className="border p-3 rounded-sm" />
             {form.formState.errors.name && (<p className="text-red-500">{form.formState.errors.name.message}</p>)}
             <input id="email" type="email" {...form.register("email")} placeholder="Enter Your Email...." required className="border p-3 rounded-sm" />
@@ -49,7 +49,7 @@ const ContactForm = () => {
             {/* <input id="message" type="message" {...form.register("message")} required className="border p-3 rounded-sm col-span-2" /> */}
             {form.formState.errors.message && (<p className="text-red-500">{form.formState.errors.message.message}</p>)}
             {isPending ? <button type="submit" disabled className="text-white bg-primary! p-2 rounded-sm max-w-50">Sending Message</button> : 
-            <button type="submit" className="text-white bg-primary! p-2 rounded-sm max-w-50">Send Your Message Now</button>}
+            <button type="submit" className="text-white bg-primary! p-2 rounded-sm md:max-w-50 max-w-full">Send Your Message Now</button>}
         </form>
      );
 }

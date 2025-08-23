@@ -8,7 +8,7 @@ const BestHotels = ({data}: {data: HotelCity[]}) => {
         {data.length > 0 ? (
             <div className="container bg-gradient-to-b from-[#F5F3F0] to-[#F5F3F1] py-[70px]">
                 <h2 className="title pb-8">Our Best Hotels</h2>
-                <div className="flex gap-8 w-full">
+                <div className="md:flex gap-8 w-full hidden">
                   {data.map((item: HotelCity) => {
                     return (
                       <div className="group relative rounded-sm overflow-hidden" key={item.id}>
@@ -30,6 +30,9 @@ const BestHotels = ({data}: {data: HotelCity[]}) => {
                       </div>
                     );
                   })}
+                </div>
+                <div className="md:hidden block">
+                  slider
                 </div>
             </div>
             ) : (

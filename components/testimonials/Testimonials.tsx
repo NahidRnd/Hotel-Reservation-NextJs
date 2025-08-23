@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 
 const Testimonials = () => {
     return (
-            <div className="flex gap-[30px]">
+            <div className="flex flex-col md:flex-row gap-[30px]">
                 <div className="testimonial-item">
                     <div className="comment">
                         <h3>Nice Place</h3>

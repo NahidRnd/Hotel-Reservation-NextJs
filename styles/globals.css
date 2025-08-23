@@ -14,7 +14,7 @@
     @apply border-border;
   }
   body{
-    @apply text-text text-[15px] leading-[1.8em];
+    @apply text-text text-[15px] md:leading-[1.8em] leading-5;
   }
   button{
     @apply cursor-pointer;
@@ -29,7 +29,7 @@
     @apply bg-primary text-white py-2.5 px-6 rounded-sm
   }
   .title{
-    @apply text-[32px] font-extrabold text-ash text-left;
+    @apply text-[32px] font-extrabold text-ash md:text-left text-center;
 
   /* letter-spacing: 0.5px;
   line-height: 38px; */
@@ -44,7 +44,7 @@
     @apply text-[#CCB28D] my-[5px] mx-0 text-xl;
   }
   .dest-img-item{
-    @apply overflow-hidden h-[343px] relative;
+    @apply overflow-hidden md:h-[343px] h-50 relative;
   }
   .dest-img-item img{
     border-radius: 2px;
@@ -91,7 +91,7 @@
     padding: 10px 20px;
   }
   .testimonial-item{
-    @apply w-[33%] min-h-[335px] text-[15px] text-center;
+    @apply w-full md:w-[33%] min-h-[335px] text-[15px] text-center;
   }
   .testimonial-item .comment{
     background: #fff;
@@ -321,5 +321,5 @@
   border-color: #000 !important;
 }
 .container{
-  @apply pt-[100px] px-[10%] pb-[50px] m-auto;
+  @apply pt-10 px-2 pb-[50px] m-auto md:pt-[100px] md:px-[10%];
 }

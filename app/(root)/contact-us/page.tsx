@@ -24,12 +24,12 @@ const ContactPage = () => {
               </div>
             </div>
             <div className="">
-                <div className="container flex gap-10">
-                    <div className="w-[60%]">
+                <div className="container flex flex-col md:flex-row gap-10">
+                    <div className="md:w-[60%] w-full">
                         <h2 className="text-3xl font-semibold mb-3 text-ash">Contact Form</h2>
                         <ContactForm />
                     </div>
-                    <div className="w-[40%]">
+                    <div className="md:w-[40%] w-full">
                         <h2 className="text-3xl font-semibold mb-3 text-ash">Contact Information</h2>
                         <ul className="flex flex-col gap-y-[8px] pt-5">
                             <li className="flex gap-[10px] items-center">

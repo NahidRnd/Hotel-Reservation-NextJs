@@ -23,8 +23,8 @@ const AboutPage = async () => {
               </div>
             </div>
             <div className="container">
-                <div className="flex gap-16 items-center">
-                    <div className="w-[55%]">
+                <div className="flex flex-col md:flex-row gap-16 items-center">
+                    <div className="md:w-[55%] w-full">
                         <h2 className="text-3xl font-semibold mb-6 text-ash">Luxury Haven</h2>
                         <p>Welcome to Luxury Haven, where elegance meets intention, and every detail tells a story.</p>
                         <p>We began with a vision: to redefine luxury as something deeply personal, purposeful, and timeless. From curated experiences to bespoke products, our mission is to inspire a life of beauty, balance, and bold self-expression.</p>
@@ -33,14 +33,14 @@ const AboutPage = async () => {
                         <p>Thank you for joining us on this journey. We&apos;re here to elevate the everyday, celebrate individuality, and build a community that values quality over quantity.</p>
                         <p className="pt-3 font-semibold">Welcome to your haven. Let&apos;s create something extraordinary.</p>
                     </div>
-                    <div className="flex gap-6">
-                        <Image src='/about-1.webp' alt="Abou us page pic 1" width={265} height={529} />
-                        <Image src='/about-2.webp' alt="Abou us page pic 2" width={265} height={529} className="-mb-8 pt-8" />
+                    <div className="flex gap-6 w-full">
+                        <Image src='/about-1.webp' alt="Abou us page pic 1" width={265} height={529} className="w-full!" />
+                        <Image src='/about-2.webp' alt="Abou us page pic 2" width={265} height={529} className="-mb-8 pt-8 hidden md:block" />
                     </div>
                 </div>
                 <div>
-                    <h2 className="text-3xl font-semibold mb-6 text-ash pt-30">Features</h2>
-                    <div className="flex gap-6 pb-4">
+                    <h2 className="text-3xl font-semibold mb-6 text-ash md:pt-30 pt-10">Features</h2>
+                    <div className="flex flex-col md:flex-row gap-6 pb-4">
                         <div className="bg-[url('/hotel.png')] w-84 h-34 py-8 px-1 bg-center bg-no-repeat border rounded-md text-center">
                             <div className="text-3xl font-semibold text-ash">+150</div>
                             <div className="text-xl font-semibold">Hotels</div>
@@ -63,8 +63,8 @@ const AboutPage = async () => {
                     </p>
                 </div>
                 <div>
-                    <h2 className="text-3xl font-semibold mb-6 text-ash pt-20">Team Members</h2>
-                    <div className="flex gap-6 text-center">
+                    <h2 className="text-3xl font-semibold mb-6 text-ash md:pt-20 pt-10">Team Members</h2>
+                    <div className="flex flex-col md:flex-row gap-6 text-center items-center">
                         <div className="border rounded-sm w-[280px]">
                             <Image src='/member-3.png' alt="Team Members" width={280} height={280} className="h-[280px] w-[280px] object-cover rounded-t-sm" />
                             <div className="py-6">
@@ -99,7 +99,7 @@ const AboutPage = async () => {
             </div>
             <div className="container bg-[#f5f3f0] py-[50px]!">
                 <h2 className="text-3xl font-semibold mb-6 text-ash">Visit Our Hotels</h2>
-                <div className="flex gap-6">
+                <div className="flex flex-col md:flex-row gap-6">
                 {data.map((item: HotelCity) => {
                     return(
                         <div key={item.id} className="bg-white border rounded-sm relative overflow-hidden">    
