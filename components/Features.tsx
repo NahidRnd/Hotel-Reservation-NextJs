@@ -17,7 +17,7 @@ const Features = () => {
                 {data.map(item =>{
                     const Icon = item.icon;
                     return(
-                    <div className="feature-item">
+                    <div key={item.id} className="feature-item">
                         <div className="feature-icon">
                             <Icon className="text-6xl w-full" />
                         </div>
@@ -34,7 +34,7 @@ const Features = () => {
                 {data.map(item =>{
                     const Icon = item.icon;
                     return(
-                    <div className="feature-item flex p-2! mt-4 items-center">
+                    <div key={item.id} className="feature-item flex p-2! mt-4 items-center">
                         <div className="feature-icon w-[30%]">
                             <Icon className="text-6xl w-full" />
                         </div>
