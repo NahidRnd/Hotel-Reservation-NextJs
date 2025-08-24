@@ -39,7 +39,7 @@ export function BookProvider({ children }: { children: React.ReactNode }) {
     const [date, setDate] = useState<Range[]>([
         {
           startDate: new Date(),
-          endDate: new Date(),
+          endDate: new Date(Date.now() + 86400000),
           key: 'selection',
         }
     ])
