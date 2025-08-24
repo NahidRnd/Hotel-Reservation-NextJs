@@ -12,13 +12,13 @@ const TopDestination = () => {
               </div>
               <div className="md:flex hidden gap-[30px]">
                 <div className="dest-img-item">
-                    <Link href={`/city/a13ec24b-3423-4a74-bc9b-7581bb40d360`}><Image src="/t_amsterdam.jfif" alt="" width={593} height={343} /></Link>
+                    <Link href={`/city/a13ec24b-3423-4a74-bc9b-7581bb40d360`}><Image src="/t_amsterdam.jpg" alt="" width={593} height={343} /></Link>
                     <div className="caption">
                         <Link href={`/city/a13ec24b-3423-4a74-bc9b-7581bb40d360`}>Amsterdam</Link>
                     </div>
                 </div>
                 <div className="dest-img-item">
-                    <Link href={`/city/907807f8-157f-4317-a93d-adcbd395c891`}><Image src="/t_paris.jfif" alt="" width={593} height={343} /></Link>
+                    <Link href={`/city/907807f8-157f-4317-a93d-adcbd395c891`}><Image src="/t_paris.jpg" alt="" width={593} height={343} /></Link>
                     <div className="caption">
                         <Link href={`/city/907807f8-157f-4317-a93d-adcbd395c891`}>Paris</Link>
                     </div>
@@ -26,13 +26,13 @@ const TopDestination = () => {
               </div>
               <div className="md:flex hidden gap-[22px] justify-center mt-[20px]">
                 <div className="dest-img-item h2">
-                    <Link href={`/city/397e5cde-64ca-46fc-b979-f66e9c3f62c9`}><Image src="/t_istanbul.jfif" alt="" width={391} height={226} /></Link>
+                    <Link href={`/city/397e5cde-64ca-46fc-b979-f66e9c3f62c9`}><Image src="/t_istanbul.jpg" alt="" width={391} height={226} /></Link>
                     <div className="caption">
                         <Link href={`/city/397e5cde-64ca-46fc-b979-f66e9c3f62c9`}>Istanbul</Link>
                     </div>
                 </div>
                 <div className="dest-img-item h2">
-                    <Link href={`/city/2d56a4b8-38be-404d-88f2-bb9e30871d58`}><Image src="/t_rotterdam.jfif" alt="" width={391} height={226} /></Link>
+                    <Link href={`/city/2d56a4b8-38be-404d-88f2-bb9e30871d58`}><Image src="/t_rotterdam.jpg" alt="" width={391} height={226} /></Link>
                     <div className="caption">
                         <Link href={`/city/2d56a4b8-38be-404d-88f2-bb9e30871d58`}>Rotterdam</Link>
                     </div>
@@ -46,25 +46,25 @@ const TopDestination = () => {
               </div>
               <div className="flex-col md:hidden space-y-6">
                 <div className="dest-img-item">
-                    <Link href={`/city/a13ec24b-3423-4a74-bc9b-7581bb40d360`}><Image src="/t_amsterdam.jfif" alt="" width={593} height={343} /></Link>
+                    <Link href={`/city/a13ec24b-3423-4a74-bc9b-7581bb40d360`}><Image src="/t_amsterdam.jpg" alt="" width={593} height={343} /></Link>
                     <div className="caption">
                         <Link href={`/city/a13ec24b-3423-4a74-bc9b-7581bb40d360`}>Amsterdam</Link>
                     </div>
                 </div>
                 <div className="dest-img-item">
-                    <Link href={`/city/907807f8-157f-4317-a93d-adcbd395c891`}><Image src="/t_paris.jfif" alt="" width={593} height={343} /></Link>
+                    <Link href={`/city/907807f8-157f-4317-a93d-adcbd395c891`}><Image src="/t_paris.jpg" alt="" width={593} height={343} /></Link>
                     <div className="caption">
                         <Link href={`/city/907807f8-157f-4317-a93d-adcbd395c891`}>Paris</Link>
                     </div>
                 </div>
                 <div className="dest-img-item">
-                    <Link href={`/city/397e5cde-64ca-46fc-b979-f66e9c3f62c9`}><Image src="/t_istanbul.jfif" alt="" width={391} height={226} /></Link>
+                    <Link href={`/city/397e5cde-64ca-46fc-b979-f66e9c3f62c9`}><Image src="/t_istanbul.jpg" alt="" width={391} height={226} /></Link>
                     <div className="caption">
                         <Link href={`/city/397e5cde-64ca-46fc-b979-f66e9c3f62c9`}>Istanbul</Link>
                     </div>
                 </div>
                 <div className="dest-img-item">
-                    <Link href={`/city/2d56a4b8-38be-404d-88f2-bb9e30871d58`}><Image src="/t_rotterdam.jfif" alt="" width={391} height={226} /></Link>
+                    <Link href={`/city/2d56a4b8-38be-404d-88f2-bb9e30871d58`}><Image src="/t_rotterdam.jpg" alt="" width={391} height={226} /></Link>
                     <div className="caption">
                         <Link href={`/city/2d56a4b8-38be-404d-88f2-bb9e30871d58`}>Rotterdam</Link>
                     </div>
