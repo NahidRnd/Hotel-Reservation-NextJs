@@ -185,9 +185,9 @@
     justify-content: center;
   } */
 
-  .single-hotel__sidebar{
+  /* .single-hotel__sidebar{
   width: 25%;
-}
+} */
   .single-hotel__sidebar .book{
   display: inline-block;
   padding: 30px;
@@ -269,6 +269,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
     column-gap: 30px;
+  }
+
+  .rooms.grid-view-off{
+    display: block;
   }
 
   input[type=checkbox] {

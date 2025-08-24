@@ -18,7 +18,7 @@ const HotelRoomsPage = async (props: {params: Promise<{id: string}>;}) => {
     const bestPrice = await getBestPriceHotelRoomById(id);
     
     return ( 
-      <div className="pt-[100px]">
+      <div className="pt-24">
             <div className="bg-cream text-ash">
               <div className="container flex justify-between items-center">
                 <div className="">
@@ -38,8 +38,8 @@ const HotelRoomsPage = async (props: {params: Promise<{id: string}>;}) => {
                 <div className="text-[22px] font-semibold text-right">€ {Number(bestPrice?.rooms[0].price)}<span className="block text-[14px] font-normal">per night</span></div>
               </div>
             </div>
-            <div className="container flex pt-[100px] gap-[30px]">
-                <div className="w-[70%]">
+            <div className="container flex flex-col md:flex-row pt-[100px] gap-[30px]">
+                <div className="md:w-[70%] w-full">
                   <div className="">
                     <div className="">
                       <Image className="w-full" src='/1.jpg' alt="hotel image" width={400} height={400} />              
@@ -55,7 +55,7 @@ const HotelRoomsPage = async (props: {params: Promise<{id: string}>;}) => {
                     {data?.description}
                   </div>
                   <h3 className="text-ash text-xl font-semibold pt-12 pb-5">Hotel Facilities</h3>
-                  <div className="grid grid-cols-4">
+                  <div className="grid md:grid-cols-4 grid-cols-2">
                     {/* grid-template-columns: repeat(4, 1fr); */}
                   {
                     data?.amenities.map((item, index) => {
@@ -78,7 +78,7 @@ const HotelRoomsPage = async (props: {params: Promise<{id: string}>;}) => {
                   })} 
                   </div>
                 </div>
-                <div className="single-hotel__sidebar">
+                <div className="single-hotel__sidebar w-full md:w-[25%]">
                   <RestoreBooking />
                   <Book />
                   <div className="inline-block rounded-sm border w-full mt-[50px]">

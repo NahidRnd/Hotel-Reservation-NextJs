@@ -77,12 +77,12 @@ const Hotels = ({hotels, serviceList}: {hotels: HotelFull[]; serviceList: Servic
           /***************DRAG ***************/
 
         return (
-              <div className="w-[70%]">
+              <div className="md:w-[70%] w-full">
                   <div className="flex justify-between items-center content-center mb-8 -mt-[10px]">
                     <span className="room-res">
                       <strong>{hotels.length}</strong> rooms found
                     </span>
-                    <span className="ml-auto mr-8 flex">
+                    <span className="ml-auto mr-8 md:flex hidden">
                       <span className="view-txt">View </span>         
                       <span className={`view-btn ${ listView ? "active" : ""}`}  onClick={handleListView}><Icon>format_list_bulleted</Icon></span>
                       <span className={`view-btn ${ !listView ? "active" : ""}`} onClick={handleGridView}><Icon>grid_on</Icon></span>
@@ -105,57 +105,113 @@ const Hotels = ({hotels, serviceList}: {hotels: HotelFull[]; serviceList: Servic
                       </ul>
                     </span>
                   </div>
-                  <div className={`rooms space-y-8 ${ !listView ? "grid-view" : ""}`}>
-                  {
-                hotels.map( item  => {
-                  return <div key={item.id} className={`${listView ? "flex border h-48" : "block h-[620px] border"}`}>
-                      <div className={`${ listView ? "w-[35%] h-48" : "w-full h-64"}`}>
-                        <Image src={item.coverImage} alt={item.name} width={400} height={400} className="h-full w-full object-cover" />
-                      </div>
-                      <div className={`${ listView ? "w-[45%] px-5 overflow-hidden py-3": "w-full text-center p-5 min-h-52"}`}>
-                      <Link key={item.id} href={`/hotels/${item.id}`}>
-                        <h2 className="text-ash text-[20px] leading-8">{item.name}</h2>
-                      </Link>
-                      <p className="line-clamp-3 my-[10px] leading-6">
-                        {item.description}
-                      </p>
-                      <div className="z-10 mt-5 relative">
-                      <Draggable className={"drag"}>
-                       <div className="drag-scroll" ref={journalRef}>
-                        {
-                        item.amenities?.map((ser,i)=>
-                          { 
-                            const service = serviceList.find((el)=> {
-                              return el.name === ser.name
-                            })
-                            if(!service) return <div key={i} className="flex items-center justify-center shrink-0 w-[35px] h-[35px] leading-9 border-dashed border-[#dedede] rounded-xs align-middle cursor-pointer">
-                            <Icon>hotel</Icon>  
-                          </div> 
-                            return <div key={i} className="flex items-center justify-center shrink-0 w-[35px] h-[35px] leading-9 border border-dashed border-[#dedede] rounded-xs align-middle cursor-pointer">
-                              <Icon>{service.icon}</Icon>  
+                  <div className="hidden md:block">
+                    <div className={`rooms space-y-8 ${ !listView ? "grid-view" : ""}`}>
+                    {
+                  hotels.map( item  => {
+                    return <div key={item.id} className={`${listView ? "flex border h-48" : "block h-[620px] border"}`}>
+                        <div className={`${ listView ? "w-[35%] h-48" : "w-full h-64"}`}>
+                          <Image src={item.coverImage} alt={item.name} width={400} height={400} className="h-full w-full object-cover" />
+                        </div>
+                        <div className={`${ listView ? "w-[45%] px-5 overflow-hidden py-3": "w-full text-center p-5 min-h-52"}`}>
+                        <Link key={item.id} href={`/hotels/${item.id}`}>
+                          <h2 className="text-ash text-[20px] leading-8">{item.name}</h2>
+                        </Link>
+                        <p className="line-clamp-3 my-[10px] leading-6">
+                          {item.description}
+                        </p>
+                        <div className="z-10 mt-5 relative">
+                        <Draggable className={"drag"}>
+                        <div className="drag-scroll" ref={journalRef}>
+                          {
+                          item.amenities?.map((ser,i)=>
+                            { 
+                              const service = serviceList.find((el)=> {
+                                return el.name === ser.name
+                              })
+                              if(!service) return <div key={i} className="flex items-center justify-center shrink-0 w-[35px] h-[35px] leading-9 border-dashed border-[#dedede] rounded-xs align-middle cursor-pointer">
+                              <Icon>hotel</Icon>  
                             </div> 
-                          }
-                        )}   
-                        </div>
-                      </Draggable>
-                      </div>
-                      </div>
-                      <div className={`${listView ? "w-[20%]" : "w-full"} relative border-l border-l-[#ebebeb] text-center`}>
-                        <div className={`${listView ? "pt-8" : "pt-1"}`}>
-                          <div className="text-ash text-lg font-semibold">
-                            € {Number(item.rooms[0].price)}
-                            <span className="block text-[#858585] text-[12px] w-[80%] text-center m-auto pb-2">PER NIGHT</span>
+                              return <div key={i} className="flex items-center justify-center shrink-0 w-[35px] h-[35px] leading-9 border border-dashed border-[#dedede] rounded-xs align-middle cursor-pointer">
+                                <Icon>{service.icon}</Icon>  
+                              </div> 
+                            }
+                          )}   
                           </div>
-                          {/* <button className="py-[10px] px-5 text-sm w-[80%] bg-primary text-white rounded-md">BOOK NOW</button> */}
+                        </Draggable>
                         </div>
-                        <div className={`${listView ? "absolute bottom-0" : "relative -bottom-6"} border-t border-t-[#ededed] leading-8 w-full`}>
-                          <Link href={`/hotels/${item.id}`}>
-                            Rooms Details
-                          </Link>
+                        </div>
+                        <div className={`${listView ? "w-[20%]" : "w-full"} relative border-l border-l-[#ebebeb] text-center`}>
+                          <div className={`${listView ? "pt-8" : "pt-1"}`}>
+                            <div className="text-ash text-lg font-semibold">
+                              € {Number(item.rooms[0].price)}
+                              <span className="block text-[#858585] text-[12px] w-[80%] text-center m-auto pb-2">PER NIGHT</span>
+                            </div>
+                            {/* <button className="py-[10px] px-5 text-sm w-[80%] bg-primary text-white rounded-md">BOOK NOW</button> */}
+                          </div>
+                          <div className={`${listView ? "absolute bottom-0" : "relative -bottom-6"} border-t border-t-[#ededed] leading-8 w-full`}>
+                            <Link href={`/hotels/${item.id}`}>
+                              Rooms Details
+                            </Link>
+                          </div>
                         </div>
                       </div>
+                    })}
                     </div>
-                  })}
+                  </div>
+                  <div className="md:hidden block">
+                    <div className="rooms space-y-8 grid-view">
+                    {
+                  hotels.map( item  => {
+                    return <div key={item.id} className="block h-[620px] border">
+                        <div className="w-full h-64">
+                          <Image src={item.coverImage} alt={item.name} width={400} height={400} className="h-full w-full object-cover" />
+                        </div>
+                        <div className="w-full text-center p-5 min-h-52">
+                        <Link key={item.id} href={`/hotels/${item.id}`}>
+                          <h2 className="text-ash text-[20px] leading-8">{item.name}</h2>
+                        </Link>
+                        <p className="line-clamp-3 my-[10px] leading-6">
+                          {item.description}
+                        </p>
+                        <div className="z-10 mt-5 relative">
+                        <Draggable className={"drag"}>
+                        <div className="drag-scroll" ref={journalRef}>
+                          {
+                          item.amenities?.map((ser,i)=>
+                            { 
+                              const service = serviceList.find((el)=> {
+                                return el.name === ser.name
+                              })
+                              if(!service) return <div key={i} className="flex items-center justify-center shrink-0 w-[35px] h-[35px] leading-9 border-dashed border-[#dedede] rounded-xs align-middle cursor-pointer">
+                              <Icon>hotel</Icon>  
+                            </div> 
+                              return <div key={i} className="flex items-center justify-center shrink-0 w-[35px] h-[35px] leading-9 border border-dashed border-[#dedede] rounded-xs align-middle cursor-pointer">
+                                <Icon>{service.icon}</Icon>  
+                              </div> 
+                            }
+                          )}   
+                          </div>
+                        </Draggable>
+                        </div>
+                        </div>
+                        <div className="w-full relative border-l border-l-[#ebebeb] text-center">
+                          <div className="pt-1">
+                            <div className="text-ash text-lg font-semibold">
+                              € {Number(item.rooms[0].price)}
+                              <span className="block text-[#858585] text-[12px] w-[80%] text-center m-auto pb-2">PER NIGHT</span>
+                            </div>
+                            {/* <button className="py-[10px] px-5 text-sm w-[80%] bg-primary text-white rounded-md">BOOK NOW</button> */}
+                          </div>
+                          <div className="relative -bottom-6 border-t border-t-[#ededed] leading-8 w-full">
+                            <Link href={`/hotels/${item.id}`}>
+                              Rooms Details
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    })}
+                    </div>
                   </div>
                 </div>
       );

@@ -6,7 +6,7 @@ import Link from "next/link";
 const AboutPage = async () => {
     const data = await getBestPriceHotelRoom();
     return ( 
-        <div className="pt-[100px]">
+        <div className="pt-24">
             <div className="bg-cream text-ash">
               <div className="container flex justify-between items-center">
                 <div className="">

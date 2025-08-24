@@ -16,7 +16,7 @@ const HotelsPage = async (props: {searchParams:Promise<{destination: string, dat
     
     return ( 
             <div className="pt-24">
-              <div className="py-12 bg-[#f5f3f0] text-ash">
+              <div className="bg-cream text-ash">
                 <div className="container flex items-center justify-center">
                   <div className="hotel-search__title">
                     <h2>Hotel Search</h2>
@@ -31,8 +31,8 @@ const HotelsPage = async (props: {searchParams:Promise<{destination: string, dat
                   </div>
                 </div>
               </div>
-              <div className="container flex pt-24 gap-8">
-                <div className="w-[25%]">
+              <div className="container flex flex-col md:flex-row pt-24 gap-8">
+                <div className="md:w-[25%] w-full">
                  <HotelsFilter services={serviceList} />
                 </div>
                 <Hotels hotels={hotels} serviceList={serviceList} />

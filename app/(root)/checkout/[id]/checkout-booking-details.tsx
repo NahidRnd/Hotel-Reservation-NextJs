@@ -14,7 +14,7 @@ const CheckoutBookingDetails = ({room, user}: {room: HotelRoomCity, user: User})
     return ( 
         <div className="border rounded-sm p-5">
             <h2 className="text-ash text-[20px] leading-8 mb-4">Booking Details</h2>
-            <div className="grid grid-cols-3 gap-y-2">
+            <div className="grid md:grid-cols-3 gap-y-2">
                 <p>
                     <strong>Full Name:</strong> {user.name}
                 </p>

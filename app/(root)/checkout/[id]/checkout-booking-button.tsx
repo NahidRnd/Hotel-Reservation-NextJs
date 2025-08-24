@@ -37,10 +37,10 @@ const CheckoutBookingButton = ({room}: {room: Room}) => {
         
     }
     return ( 
-        <div className="border font-semibold p-6">
+        <div className="border font-semibold md:p-6 p-2 py-4">
                     <h2 className="text-ash text-[20px] leading-8 mb-4">Payment Details</h2>
-                    <ul className="flex gap-6">
-                        <li className="w-40 h-44 border rounded-md py-5 text-center font-bold cursor-pointer">
+                    <ul className="grid md:grid-cols-4 grid-cols-2 justify-start md:gap-6 gap-2 md:max-w-180">
+                        <li className="md:w-40 h-44 border rounded-md py-5 text-center font-bold cursor-pointer">
                             <label htmlFor="paypal" className="block cursor-pointer">
                                 <input type="radio" name="payment" id="paypal" className="peer hidden" />
                                 <div className="w-20 h-20 p-4 rounded-full m-auto bg-gray-100 mb-4 peer-checked:bg-primary peer-checked:text-white">
@@ -49,7 +49,7 @@ const CheckoutBookingButton = ({room}: {room: Room}) => {
                                 PayPal
                             </label>
                         </li>
-                        <li className="w-40 h-44 border rounded-md py-5 text-center font-bold cursor-pointer">
+                        <li className="md:w-40 h-44 border rounded-md py-5 text-center font-bold cursor-pointer">
                             <label htmlFor="bank" className="block cursor-pointer">
                                 <input type="radio" name="payment" id="bank" className="peer hidden" />
                                 <div className="w-20 h-20 p-4 rounded-full m-auto bg-gray-100 mb-4 peer-checked:bg-primary peer-checked:text-white">
@@ -58,7 +58,7 @@ const CheckoutBookingButton = ({room}: {room: Room}) => {
                                 Bank Transfer
                             </label>
                         </li>
-                        <li className="w-40 h-44 border rounded-md py-5 text-center font-bold cursor-pointer">
+                        <li className="md:w-40 h-44 border rounded-md py-5 text-center font-bold cursor-pointer">
                             <label htmlFor="arrival" className="block cursor-pointer">
                                 <input type="radio" name="payment" id="arrival" className="peer hidden" />
                                 <div className="w-20 h-20 p-4 rounded-full m-auto bg-gray-100 mb-4 peer-checked:bg-primary peer-checked:text-white">
@@ -67,7 +67,7 @@ const CheckoutBookingButton = ({room}: {room: Room}) => {
                                 Payment On Arrival
                             </label>
                         </li>
-                        <li className="w-40 h-44 border rounded-md py-5 text-center font-bold cursor-pointer">
+                        <li className="md:w-40 h-44 border rounded-md py-5 text-center font-bold cursor-pointer">
                             <label htmlFor="request" className="block cursor-pointer">
                                 <input type="radio" name="payment" id="request" className="peer hidden" />
                             <div className="w-20 h-20 p-4 rounded-full m-auto bg-gray-100 mb-4 peer-checked:bg-primary peer-checked:text-white">
@@ -77,7 +77,7 @@ const CheckoutBookingButton = ({room}: {room: Room}) => {
                             </label>
                         </li>
                     </ul>
-                    <button onClick={handleBook} className="bg-primary text-white px-6 py-2 mt-8 rounded-sm">Book Now</button>
+                    <button onClick={handleBook} className="bg-primary text-white px-6 py-2 md:mt-8 mt-2 rounded-sm">Book Now</button>
                 </div>
      );
 }

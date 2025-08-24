@@ -15,7 +15,7 @@ const BookingPage = async (props: {params: Promise<{id: string}>;}) => {
     const user = await getUserInfo();
     
     return ( 
-          <div className="pt-[100px]">
+          <div className="pt-24">
             <div className="bg-cream text-ash">
               <div className="container flex justify-between items-center">
                 <div className="">
@@ -32,14 +32,14 @@ const BookingPage = async (props: {params: Promise<{id: string}>;}) => {
               </div>
             </div>
             <CheckoutSteps current={1} />
-            <div className="container flex pt-[100px] gap-[30px]">
-                <div className="w-[70%]">
+            <div className="container flex flex-col md:flex-row pt-[100px] gap-[30px]">
+                <div className="md:w-[70%] w-full">
                   <div className={`rooms space-y-8`}>
-                   <div className="flex border h-48">
-                      <div className="w-[35%] h-48">
+                   <div className="flex flex-col md:flex-row border md:h-48">
+                      <div className="md:w-[35%] h-48">
                         <Image src={room?.images[0] || 'noimage.png'} alt={room?.name || 'room image'} className="h-full w-full object-cover" width={400} height={400} />
                       </div>
-                      <div className="w-[45%] px-5 overflow-hidden py-3">
+                      <div className="md:w-[45%] px-5 overflow-hidden py-3">
                         <Link href={`/hotels/`}>
                           <h2 className="text-ash text-[20px] leading-8 mb-2">{room?.hotel.name}</h2>
                         </Link>
@@ -62,7 +62,7 @@ const BookingPage = async (props: {params: Promise<{id: string}>;}) => {
                   </div>
                   <BookingUserInfo user={user} />
                 </div>
-                <div className="w-[30%] border font-semibold p-6">
+                <div className="md:w-[30%] w-full border font-semibold p-6">
                   <BookingDetails price={Number(room?.price)} roomId={roomId} />
                 </div>
             </div>

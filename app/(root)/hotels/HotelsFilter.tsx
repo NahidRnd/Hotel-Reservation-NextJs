@@ -52,9 +52,11 @@ const HotelsFilter = ({services}: {services: Services[]}) => {
               </div>
               <RestoreBooking />
               <Book page="filter" />
-              <div className="">
+              <div>
                 <h3 className="text-lg font-semibold pb-5">price slider</h3>
-                <Slider range min={50} max={500} value={price.length>0 ? price : [50, 500]} onChange={(value) => {const fixedValue = Array.isArray(value) ? value : [value]; setPrice(fixedValue);}}  marks={{ 50: "€50", 150: "€150", 250: "€250", 400: "€400", 500: "€500", }} />
+                <div className="w-[95%] mx-auto">
+                  <Slider range min={50} max={500} value={price.length>0 ? price : [50, 500]} onChange={(value) => {const fixedValue = Array.isArray(value) ? value : [value]; setPrice(fixedValue);}}  marks={{ 50: "€50", 150: "€150", 250: "€250", 400: "€400", 500: "€500", }} />
+                </div>
               </div>
                 <span className="pt-6">{price.length>0 ? `${price[0]} to ${price[1]}` : ""}</span>
               <div className="service-filter">

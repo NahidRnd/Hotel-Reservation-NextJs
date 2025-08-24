@@ -42,7 +42,7 @@ const BookingUserInfo = ({user} : {user: User}) => {
     return ( 
         <div className="border mt-10 p-6 rounded-md">
             <h3 className="text-2xl font-bold text-ash mb-4">User Info</h3>
-            <form method="post" onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-2 gap-6">
+            <form method="post" onSubmit={form.handleSubmit(onSubmit)} className="grid md:grid-cols-2 grid-cols-1 gap-6">
                 <input id="name" {...form.register("name")} type="text" required className="border p-3 rounded-sm" />
                 {form.formState.errors.name && (<p className="text-red-500">{form.formState.errors.name.message}</p>)}
                 <input id="email" type="email" value={user.email} disabled required className="border p-3 rounded-sm" />

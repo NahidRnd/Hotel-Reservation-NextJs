@@ -12,7 +12,7 @@ const BookingDetails = ({price, roomId}: { price: number; roomId: string; }) => 
         const totalPrice = price * nights;
       
         return (
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col md:h-full h-50">
           <h3 className="text-lg font-bold text-ash my-2">Booking Details</h3>
           <div className="flex justify-between">
             <span>Check In</span>

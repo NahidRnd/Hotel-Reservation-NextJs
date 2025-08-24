@@ -135,6 +135,11 @@ export async function getSimilarHotels(id: string, city: string){
         },
         include: {
             city: true,
+            rooms: {
+                orderBy: { price: 'asc' },
+                take: 1,
+                select: { price: true, }
+            },
         },
         take: 3,
     });

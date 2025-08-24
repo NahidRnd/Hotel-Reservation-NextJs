@@ -7,8 +7,8 @@ const CityPage = async (props: {params: Promise<{id: string}>;}) => {
     return ( 
         <div className="pt-[70px]">
       <div className="city-header">  
-        <div className="h-[630px] relative">
-            <Image src={`/${(city?.images) ? city.images[0]: ""}`} alt="" className="w-full h-full" />
+        <div className="md:h-[630px] relative">
+            <Image src={`/${(city?.images) ? city.images[0]: ""}`} alt="" className="w-full h-full" width={2000} height={1000} />
             <div className="container text-white absolute left-0 right-0 bottom-0 text-[26px] bg-gradient-to-t from-[rgba(0,0,0,0.6)] to-[rgba(255,255,255,0)]">
                 <h2>{city?.name}</h2>
             </div>

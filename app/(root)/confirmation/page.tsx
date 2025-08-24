@@ -29,11 +29,11 @@ const Confirmation = async() => {
               </div>
             </div>
             <CheckoutSteps current={3} />
-            <div className="flex w-xl bg-green-200 text-green-950 m-auto p-6 mb-6 items-center gap-2">
+            <div className="flex md:w-xl bg-green-200 text-green-950 md:m-auto mx-2 rounded p-6 mb-6 items-center gap-2">
                 <IoCheckmark className="bg-green-300 rounded-full w-14 h-10" />
                 <p>Your booking has been submitted successfully. We will call you when it is confirmed by hotel administration.</p>
             </div>
-            <div className="m-auto w-xl border rounded-sm p-10 mb-10">
+            <div className="md:m-auto mx-2 md:w-xl border rounded-sm md:p-10 p-4 mb-10">
                 <h2 className="text-ash text-[20px] leading-8 mb-6 text-center">Booking Details</h2>
                 <div className="grid grid-cols-2 gap-y-2">
                     <p>Booking ID</p>
